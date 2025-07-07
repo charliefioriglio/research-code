@@ -1,0 +1,524 @@
+import sympy as sp
+one = sp.Matrix([
+    [-0.707819, -0.708592, -0.006150,  0.003315, -0.000000, -0.002207],
+    [-0.000750, -0.002029,  0.322996, -0.348213,  0.000000, -0.090132],
+    [ 0.002340,  0.011837,  0.311308, -0.467762, -0.000000, -0.169320],
+    [-0.000465,  0.003511,  0.011394, -0.130985,  0.000000, -0.081147],
+    [-0.000000,  0.000000,  0.000000, -0.000000,  0.000002, -0.000000],
+    [ 0.000000, -0.000000, -0.000000, -0.000000, -0.435815, -0.000000],
+    [ 0.001127,  0.000747, -0.109631, -0.106146,  0.000000, -0.433790],
+    [-0.000000, -0.000000,  0.000000,  0.000000,  0.000002, -0.000000],
+    [-0.000000,  0.000000,  0.000000, -0.000000, -0.283399, -0.000000],
+    [-0.000569, -0.007866, -0.041617, -0.013632,  0.000000, -0.273871],
+    [ 0.000000,  0.000000, -0.000000, -0.000000,  0.000000, -0.000000],
+    [ 0.000000,  0.000000,  0.000000,  0.000000, -0.043998, -0.000000],
+    [ 0.000157, -0.000772,  0.005164,  0.019320, -0.000000, -0.040662],
+    [ 0.000000,  0.000000,  0.000000,  0.000000, -0.000000,  0.000000],
+    [-0.000000,  0.000000,  0.000000, -0.000000,  0.015851,  0.000000],
+    [ 0.000063, -0.000024,  0.017915,  0.006875,  0.000000,  0.025270],
+    [ 0.000000,  0.000000, -0.000000,  0.000000, -0.000000, -0.000000],
+    [ 0.000114,  0.000128,  0.000151,  0.000465,  0.000000,  0.000371],
+    [-0.000000,  0.000000,  0.000000,  0.000000, -0.000000,  0.000000],
+    [ 0.000000, -0.000000, -0.000000,  0.000000,  0.003702,  0.000000],
+    [ 0.000581,  0.002636,  0.010009, -0.010157,  0.000000,  0.020743],
+    [-0.000000,  0.000000,  0.000000, -0.000000, -0.000000, -0.000000],
+    [-0.000009,  0.000007,  0.000719,  0.001840, -0.000000,  0.000876],
+    [-0.707819,  0.708592, -0.006150, -0.003315, -0.000000, -0.002207],
+    [-0.000750,  0.002029,  0.322996,  0.348213, -0.000000, -0.090132],
+    [ 0.002340, -0.011837,  0.311308,  0.467762,  0.000000, -0.169320],
+    [-0.000465, -0.003511,  0.011394,  0.130985, -0.000000, -0.081147],
+    [ 0.000000,  0.000000, -0.000000, -0.000000,  0.000002,  0.000000],
+    [-0.000000,  0.000000, -0.000000, -0.000000, -0.435815, -0.000000],
+    [-0.001127,  0.000747,  0.109631, -0.106146, -0.000000,  0.433790],
+    [-0.000000, -0.000000,  0.000000, -0.000000,  0.000002,  0.000000],
+    [ 0.000000, -0.000000, -0.000000,  0.000000, -0.283399, -0.000000],
+    [ 0.000569, -0.007866,  0.041617, -0.013632,  0.000000,  0.273871],
+    [ 0.000000,  0.000000, -0.000000,  0.000000,  0.000000,  0.000000],
+    [-0.000000, -0.000000, -0.000000, -0.000000, -0.043998,  0.000000],
+    [-0.000157, -0.000772, -0.005164,  0.019320, -0.000000,  0.040662],
+    [ 0.000000, -0.000000,  0.000000, -0.000000, -0.000000,  0.000000],
+    [-0.000000,  0.000000,  0.000000, -0.000000, -0.015851, -0.000000],
+    [ 0.000063,  0.000024,  0.017915, -0.006875, -0.000000,  0.025270],
+    [-0.000000,  0.000000,  0.000000,  0.000000,  0.000000,  0.000000],
+    [ 0.000114, -0.000128,  0.000151, -0.000465, -0.000000,  0.000371],
+    [-0.000000, -0.000000,  0.000000, -0.000000,  0.000000,  0.000000],
+    [ 0.000000, -0.000000, -0.000000,  0.000000, -0.003702, -0.000000],
+    [ 0.000581, -0.002636,  0.010009,  0.010157,  0.000000,  0.020743],
+    [ 0.000000,  0.000000, -0.000000, -0.000000,  0.000000, -0.000000],
+    [-0.000009, -0.000007,  0.000719, -0.001840, -0.000000,  0.000876]
+])
+
+two = sp.Matrix([
+    [-0.000000,  0.000000, -0.000000,  0.003640,  0.018972, -0.000000],
+    [-0.000000,  0.000000, -0.000000, -0.049671, -0.031367, -0.000000],
+    [-0.000000, -0.000000,  0.000000, -0.218519, -0.312579, -0.000000],
+    [-0.000000, -0.000000,  0.000000, -6.049833,  0.734007,  0.000000],
+    [ 0.413290,  0.000003, -0.492800,  0.000000, -0.000000, -0.128163],
+    [ 0.000002, -0.485341, -0.000003, -0.000000,  0.000000, -0.000001],
+    [-0.000000, -0.000000,  0.000000,  0.024953, -0.093381, -0.000000],
+    [ 0.290067,  0.000002, -0.382024,  0.000000,  0.000000, -0.302104],
+    [ 0.000002, -0.377960, -0.000002,  0.000000,  0.000000, -0.000002],
+    [ 0.000000,  0.000000, -0.000000,  0.356371, -0.212065, -0.000000],
+    [ 0.057626,  0.000001, -0.152688,  0.000000, -0.000000,  0.627754],
+    [ 0.000000, -0.192021, -0.000001,  0.000000, -0.000000,  0.000003],
+    [ 0.000000,  0.000000, -0.000000,  2.691921,  1.016336,  0.000000],
+    [-0.000000,  0.000000, -0.000000, -0.000000, -0.000000,  0.000000],
+    [-0.000000, -0.005120, -0.000000,  0.000000, -0.000000,  0.000000],
+    [ 0.000000, -0.000000,  0.000000,  0.011485,  0.011771, -0.000000],
+    [-0.018314,  0.000000, -0.005201,  0.000000, -0.000000,  0.007401],
+    [-0.000000,  0.000000, -0.000000, -0.000441, -0.000664, -0.000000],
+    [ 0.000000, -0.000000,  0.000000,  0.000000,  0.000000,  0.000000],
+    [-0.000000, -0.003620,  0.000000, -0.000000,  0.000000, -0.000000],
+    [-0.000000, -0.000000,  0.000000, -0.143960, -0.033970,  0.000000],
+    [-0.013436,  0.000000,  0.001501, -0.000000,  0.000000, -0.001827],
+    [ 0.000000, -0.000000, -0.000000,  0.000393,  0.001554,  0.000000],
+    [-0.000000, -0.000000,  0.000000, -0.003640,  0.018972,  0.000000],
+    [-0.000000, -0.000000,  0.000000,  0.049671, -0.031367,  0.000000],
+    [ 0.000000,  0.000000, -0.000000,  0.218519, -0.312579, -0.000000],
+    [ 0.000000,  0.000000, -0.000000,  6.049833,  0.734007, -0.000000],
+    [ 0.413290, -0.000003,  0.492800,  0.000000,  0.000000, -0.128163],
+    [ 0.000002,  0.485341,  0.000003,  0.000000, -0.000000, -0.000001],
+    [ 0.000000, -0.000000, -0.000000,  0.024953,  0.093381,  0.000000],
+    [ 0.290067, -0.000002,  0.382024,  0.000000,  0.000000, -0.302104],
+    [ 0.000002,  0.377960,  0.000002, -0.000000, -0.000000, -0.000002],
+    [ 0.000000,  0.000000, -0.000000,  0.356371,  0.212065, -0.000000],
+    [ 0.057626, -0.000001,  0.152688, -0.000000, -0.000000,  0.627754],
+    [ 0.000000,  0.192021,  0.000001, -0.000000,  0.000000,  0.000003],
+    [ 0.000000,  0.000000, -0.000000,  2.691921, -1.016336, -0.000000],
+    [-0.000000,  0.000000, -0.000000,  0.000000, -0.000000, -0.000000],
+    [ 0.000000, -0.005120, -0.000000,  0.000000, -0.000000, -0.000000],
+    [-0.000000, -0.000000, -0.000000, -0.011485,  0.011771, -0.000000],
+    [ 0.018314,  0.000000, -0.005201,  0.000000,  0.000000, -0.007401],
+    [-0.000000,  0.000000,  0.000000,  0.000441, -0.000664,  0.000000],
+    [-0.000000, -0.000000, -0.000000, -0.000000,  0.000000,  0.000000],
+    [ 0.000000, -0.003620,  0.000000, -0.000000,  0.000000,  0.000000],
+    [ 0.000000,  0.000000, -0.000000,  0.143960, -0.033970, -0.000000],
+    [ 0.013436,  0.000000,  0.001501, -0.000000,  0.000000,  0.001827],
+    [-0.000000,  0.000000,  0.000000, -0.000393,  0.001554, -0.000000],
+])
+
+anion_mocos = sp.Matrix.hstack(one,two)
+anion_mocos_occ = sp.Matrix(anion_mocos[:,0:9])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import numpy as np
+import sympy as sp
+from scipy.integrate import quad
+
+limit = 5
+ex_s1 = np.array([1.17200000E+04,1.75900000E+03,4.00800000E+02,1.13700000E+02,3.70300000E+01,1.32700000E+01,5.02500000E+00,1.01300000E+00])
+co_s1 = np.array([7.10000000E-04,5.47000000E-03,2.78370000E-02,1.04800000E-01,2.83062000E-01,4.48719000E-01,2.70952000E-01,1.54580000E-02])
+ex_s2 = np.array([1.17200000E+04,1.75900000E+03,4.00800000E+02,1.13700000E+02,3.70300000E+01,1.32700000E+01,5.02500000E+00,1.01300000E+00])
+co_s2 = np.array([-1.60000000E-07,-1.26300000E-03,-6.26700000E-03,-2.57160000E-02,-7.09240000E-02,-1.65411000E-01,-1.16955000E-01,5.57368000E-01])
+ex_s3 = np.array([3.02300000E-01])
+co_s3 = np.array([1])
+ex_s4 = np.array([3.02300000E-01])
+co_s4 = np.array([1])
+ex_p1 = np.array([1.77000000E+01,3.85400000E+00,1.04600000E+00])
+co_p1 = np.array([4.30180000E-02,2.28913000E-01,5.08728000E-01])
+ex_p2 = np.array([2.75300000E-01])
+co_p2 = np.array([1])
+ex_p3 = np.array([6.85600000E-02])
+co_p3 = np.array([1])
+ex_d1 = np.array([1.18500000E+00])
+co_d1 = np.array([1])
+ex_d2 = np.array([3.32000000E-01])
+co_d2 = np.array([1])
+# Define symbolic variables
+x_sym, y_sym, z_sym = sp.symbols('x y z')
+
+# Define the symbolic functions
+
+#s1
+def s1_sym(x, y, z):
+    s1 = sum(co_s1[i] * sp.exp(-(x**2 + y**2 + z**2) * ex_s1[i]) for i in range(len(co_s1)))
+    return s1
+
+#s2
+def s2_sym(x, y, z):
+    s2 = sum(co_s2[i] * sp.exp(-(x**2 + y**2 + z**2) * ex_s2[i]) for i in range(len(co_s2)))
+    return s2
+
+#s3
+def s3_sym(x, y, z):
+    s3 = sum(co_s3[i] * sp.exp(-(x**2 + y**2 + z**2) * ex_s3[i]) for i in range(len(co_s3)))
+    return s3
+
+#s4
+def s4_sym(x, y, z):
+    s4 = sum(co_s4[i] * sp.exp(-(x**2 + y**2 + z**2) * ex_s4[i]) for i in range(len(co_s4)))
+    return s4
+
+#p1x
+def p1x_sym(x, y, z):
+    p1x = sum(co_p1[i] * x * sp.exp(-(x**2 + y**2 + z**2) * ex_p1[i]) for i in range(len(co_p1)))
+    return p1x
+
+#p1y
+def p1y_sym(x, y, z):
+    p1y = sum(co_p1[i] * y * sp.exp(-(x**2 + y**2 + z**2) * ex_p1[i]) for i in range(len(co_p1)))
+    return p1y
+
+#p1z
+def p1z_sym(x, y, z):
+    p1z = sum(co_p1[i] * z * sp.exp(-(x**2 + y**2 + z**2) * ex_p1[i]) for i in range(len(co_p1)))
+    return p1z
+
+#p2x
+def p2x_sym(x, y, z):
+    p2x = sum(co_p2[i] * x * sp.exp(-(x**2 + y**2 + z**2) * ex_p2[i]) for i in range(len(co_p2)))
+    return p2x
+
+#p2y
+def p2y_sym(x, y, z):
+    p2y = sum(co_p2[i] * y * sp.exp(-(x**2 + y**2 + z**2) * ex_p2[i]) for i in range(len(co_p2)))
+    return p2y
+#p2z
+def p2z_sym(x, y, z):
+    p2z = sum(co_p2[i] * z * sp.exp(-(x**2 + y**2 + z**2) * ex_p2[i]) for i in range(len(co_p2)))
+    return p2z
+
+#p3x
+def p3x_sym(x, y, z):
+    p3x = sum(co_p3[i] * x * sp.exp(-(x**2 + y**2 + z**2) * ex_p3[i]) for i in range(len(co_p3)))
+    return p3x
+
+#p3y
+def p3y_sym(x, y, z):
+    p3y = sum(co_p3[i] * y * sp.exp(-(x**2 + y**2 + z**2) * ex_p3[i]) for i in range(len(co_p3)))
+    return p3y
+
+#p3z
+def p3z_sym(x, y, z):
+    p3z = sum(co_p3[i] * z * sp.exp(-(x**2 + y**2 + z**2) * ex_p3[i]) for i in range(len(co_p3)))
+    return p3z
+    
+#d1xy
+def d1xy_sym(x, y, z):
+    d1xy = sum(co_d1[i] * x * y * sp.exp(-(x**2 + y**2 + z**2) * ex_d1[i]) for i in range(len(co_d1)))
+    return d1xy
+
+#d1yz
+def d1yz_sym(x, y, z):
+    d1yz = sum(co_d1[i] * y * z * sp.exp(-(x**2 + y**2 + z**2) * ex_d1[i]) for i in range(len(co_d1)))
+    return d1yz
+
+#d1zz
+def d1zz_sym(x, y, z):
+    d1zz = sum(co_d1[i] * z * z * sp.exp(-(x**2 + y**2 + z**2) * ex_d1[i]) for i in range(len(co_d1)))
+    return d1zz
+
+#d1xz
+def d1xz_sym(x, y, z):
+    d1xz = sum(co_d1[i] * x * z * sp.exp(-(x**2 + y**2 + z**2) * ex_d1[i]) for i in range(len(co_d1)))
+    return d1xz
+
+#d1xxyy
+def d1xxyy_sym(x, y, z):
+    d1xxyy = sum(co_d1[i] * (x * x - y * y) * sp.exp(-(x**2 + y**2 + z**2) * ex_d1[i]) for i in range(len(co_d1)))
+    return d1xxyy
+
+#d2xy
+def d2xy_sym(x, y, z):
+    d2xy = sum(co_d2[i] * x * y * sp.exp(-(x**2 + y**2 + z**2) * ex_d2[i]) for i in range(len(co_d2)))
+    return d2xy
+        
+#d2yz
+def d2yz_sym(x, y, z):
+    d2yz = sum(co_d2[i] * y * z * sp.exp(-(x**2 + y**2 + z**2) * ex_d2[i]) for i in range(len(co_d2)))
+    return d2yz
+
+#d2zz
+def d2zz_sym(x, y, z):
+    d2zz = sum(co_d2[i] * z * z * sp.exp(-(x**2 + y**2 + z**2) * ex_d2[i]) for i in range(len(co_d2)))
+    return d2zz
+
+#d2xz
+def d2xz_sym(x, y, z):
+    d2xz = sum(co_d2[i] * x * z * sp.exp(-(x**2 + y**2 + z**2) * ex_d2[i]) for i in range(len(co_d2)))
+    return d2xz
+
+#d2xxyy
+def d2xxyy_sym(x, y, z):
+    d2xxyy = sum(co_d2[i] * (x * x - y * y) * sp.exp(-(x**2 + y**2 + z**2) * ex_d2[i]) for i in range(len(co_d2)))
+    return d2xxyy
+
+#basis set array
+basis_set_eqns = sp.Array([s1_sym(x_sym,y_sym,z_sym),s2_sym(x_sym,y_sym,z_sym),s3_sym(x_sym,y_sym,z_sym),s4_sym(x_sym,y_sym,z_sym),p1x_sym(x_sym,y_sym,z_sym),p1y_sym(x_sym,y_sym,z_sym),p1z_sym(x_sym,y_sym,z_sym),p2x_sym(x_sym,y_sym,z_sym),p2y_sym(x_sym,y_sym,z_sym),p2z_sym(x_sym,y_sym,z_sym),p3x_sym(x_sym,y_sym,z_sym),p3y_sym(x_sym,y_sym,z_sym),p3z_sym(x_sym,y_sym,z_sym),d1xy_sym(x_sym,y_sym,z_sym),d1yz_sym(x_sym,y_sym,z_sym),d1zz_sym(x_sym,y_sym,z_sym),d1xz_sym(x_sym,y_sym,z_sym),d1xxyy_sym(x_sym,y_sym,z_sym),d2xy_sym(x_sym,y_sym,z_sym),d2yz_sym(x_sym,y_sym,z_sym),d2zz_sym(x_sym,y_sym,z_sym),d2xz_sym(x_sym,y_sym,z_sym),d2xxyy_sym(x_sym,y_sym,z_sym)])
+basis_set_unnorm = sp.Matrix(basis_set_eqns)
+
+# Perform entry-wise multiplication
+hadamard_product = basis_set_unnorm.multiply_elementwise(basis_set_unnorm)
+
+# Compute the triple integral of each entry
+integrated_matrix = hadamard_product.applyfunc(lambda entry: sp.integrate(sp.integrate(sp.integrate(entry, (x_sym, -sp.oo, sp.oo)),(y_sym, -sp.oo, sp.oo)),(z_sym, -sp.oo, sp.oo)))
+N = integrated_matrix.applyfunc(lambda entry: 1 / sp.sqrt(entry))
+basis_set_half = basis_set_unnorm.multiply_elementwise(N)
+basis_set = sp.Matrix.vstack(basis_set_half,basis_set_half)
+N_num = N.applyfunc(lambda entry: entry.evalf())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import sympy as sp
+import numpy as np
+from basis_set1 import basis_set
+
+# Create a 46x46 matrix where each column is the same as the basis_set column
+basis_set_square = sp.Matrix.hstack(*[basis_set for _ in range(46)])
+
+basis_set_square_T = basis_set_square.transpose()
+
+# Perform entry-wise multiplication
+hadamard_product = basis_set_square.multiply_elementwise(basis_set_square_T)
+
+# Define symbolic variables
+x_sym, y_sym, z_sym = sp.symbols('x y z')
+
+# Compute the triple integral of each entry
+S = hadamard_product.applyfunc(
+    lambda entry: sp.integrate(
+        sp.integrate(
+            sp.integrate(entry, (x_sym, -sp.oo, sp.oo)),(y_sym, -sp.oo, sp.oo)),(z_sym, -sp.oo, sp.oo)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import sympy as sp
+import csv
+
+# Import basis_set, neutral_mocos_occ, anion_mocos_occ, and S
+from basis_set1 import basis_set
+from neutral_mocos import neutral_mocos_occ
+from anion_mocos import anion_mocos_occ
+from ao_integrals import S
+from sympy import pi
+
+# Get the number of columns in neutral_mocos_occ and anion_mocos_occ
+num_columns_n = neutral_mocos_occ.shape[1]
+num_columns_a = anion_mocos_occ.shape[1]
+result_matrices = {}
+
+# Create a matrix for each column and name them dynamically
+for i in range(num_columns_n):
+    # Extract the ith column from neutral_mocos
+    column_i = neutral_mocos_occ[:, i]
+    
+    # Horizontally stack this column 46 times
+    matrix_col_i = sp.Matrix.hstack(*[column_i for _ in range(46)])
+    
+    # Perform element-wise multiplication with S
+    result_matrix = matrix_col_i.multiply_elementwise(S)
+    
+    # Store the result in the dictionary with a key `result_col_i`
+    result_matrices[f'result_col_{i}'] = result_matrix
+
+# Sum along the columns of each result_col_i matrix
+column_sums = {}  # Dictionary to store column sums
+
+# Iterate through each result matrix to compute the sum of columns
+for i in range(num_columns_n):
+    result_matrix = result_matrices[f'result_col_{i}']
+    
+    # Compute the sum along the columns
+    sum_along_columns = sp.Matrix([sum(result_matrix[:, j]) for j in range(result_matrix.shape[1])])
+    
+    # Store the column sums in the dictionary
+    column_sums[f'sum_col_{i}'] = sum_along_columns
+
+# Create sum_col_8 as a 46x1 matrix of 1's
+sum_col_8 = sp.Matrix([1] * 46)
+
+# Add sum_col_8 to the column_sums dictionary
+column_sums['sum_col_8'] = sum_col_8
+
+# Create the final result matrix
+final_matrix = sp.Matrix.zeros(num_columns_a, num_columns_a)
+
+# Iterate over each neutral column index i
+for i in range(num_columns_a):
+    # Dictionary to store matrices for anion_mocos
+    result_matrices_anion = {}
+
+    # Iterate over each anion column index j
+    for j in range(num_columns_a):
+        # Extract the jth column from anion_mocos
+        anion_column_j = sp.Matrix(anion_mocos_occ[:, j])
+        
+        # Perform element-wise multiplication with the corresponding sum_col matrix
+        result_matrix_anion = anion_column_j.multiply_elementwise(column_sums[f'sum_col_{i}'])
+        
+        # Sum along the columns to get a scalar value for the entry (i, j)
+        sum_along_columns_anion = sum(result_matrix_anion)
+        
+        # Assign the scalar sum to the final matrix
+        final_matrix[i, j] = sum_along_columns_anion
+
+# List of columns with non-zero determinants
+columns = [0,1,2,3,4,5,6,7,8]  # 0-indexed (5th, 6th, 8th, 9th columns)
+
+# Compute determinants of selected 8x8 submatrices
+determinants = []  # List to store determinants of selected 8x8 submatrices
+
+for i in columns:
+    # Create a submatrix by removing the 9th row and i-th column
+    submatrix = final_matrix.copy()
+    submatrix.row_del(8)  # Remove the 9th row (index 8)
+    submatrix.col_del(i)  # Remove the i-th column
+    
+    # Compute the determinant of the submatrix
+    det_i = submatrix.det()
+    
+    # Evaluate the determinant numerically
+    det_i_numeric = det_i.evalf()
+    
+    # Append the numerical determinant to the list
+    determinants.append((i+1, det_i_numeric))
+
+# Output the numerical determinants
+for idx, det in determinants:
+    print(f"Determinant of submatrix by removing 9th row and {idx}th column: {det}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import sympy as sp
+from sympy import pi
+from anion_mocos import anion_mocos_occ
+from basis_set1 import basis_set_unnorm
+from basis_set1 import N_num
+import csv
+
+# Define symbols for integration
+x_sym, y_sym, z_sym = sp.symbols('x y z')
+
+# Define determinants
+determinants = sp.Matrix([0,0,0,0,-9.68521744847046E-30,0,5.19248663724133E-29,-9.67345770388605E-13,3.42262204094738E-11]).transpose()
+
+# Expand determinants and ao N's
+det_expanded = sp.Matrix.vstack(*[determinants for _ in range(46)])
+aoNs_expanded_half = sp.Matrix.hstack(*[N_num for _ in range(9)])
+aoNs_expanded = sp.Matrix.vstack(aoNs_expanded_half, aoNs_expanded_half)
+
+# Scale MOs
+scaled_mos = anion_mocos_occ.multiply_elementwise(det_expanded)
+
+scaled_normed_mos = scaled_mos.multiply_elementwise(aoNs_expanded)
+
+# Expand basis set
+basis_expanded_half = sp.Matrix.hstack(*[basis_set_unnorm for _ in range(9)])
+basis_expanded = sp.Matrix.vstack(basis_expanded_half, basis_expanded_half)
+
+# Compute MO matrix
+mo_matrix = scaled_normed_mos.multiply_elementwise(basis_expanded)
+
+# Calculate unnormalized MOs
+row = sp.Matrix([sum(mo_matrix.row(i)) for i in range(mo_matrix.shape[0])])
+
+# Compute sum of all entries in the row matrix
+do_orb = sum(row[i] for i in range(row.shape[0]))
+
+# Square the result
+do_orb_square = do_orb**2
+
+# Define the integration limits
+integral = sp.integrate(sp.integrate(sp.integrate(do_orb_square, (x_sym, -sp.oo, sp.oo)), (y_sym, -sp.oo, sp.oo)), (z_sym, -sp.oo, sp.oo))
+
+integral_numeric = integral.evalf()
+
+N_do = 1/sp.sqrt(integral_numeric)
+
+do_coeffs = N_do * scaled_normed_mos
+
+ao_coeffs = sp.Matrix([sum(do_coeffs.row(i)) for i in range(do_coeffs.shape[0])])
+
+
+# Specify the path to save the CSV file
+csv_file_path = 'ao_coeffs.csv'  # Path to the CSV file
+
+# Open the file in write mode
+with open(csv_file_path, mode='w', newline='') as csvfile:
+    csvwriter = csv.writer(csvfile)
+
+    # Iterate through each row in the final matrix
+    for i in range(ao_coeffs.rows):
+        # Write the row to the CSV file
+        csvwriter.writerow(ao_coeffs.row(i))
+
+
