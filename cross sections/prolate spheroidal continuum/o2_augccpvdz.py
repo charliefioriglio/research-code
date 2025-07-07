@@ -22,7 +22,7 @@ def integrate_3d(f, dV):
 # Constants
 hartree = 27.2114  # eV
 c = 137.036        # a.u. speed of light
-D = 1.0
+D = 0
 
 # ---------------------------------------------
 # Double factorial
